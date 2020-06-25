@@ -2,10 +2,8 @@ package org.lineru.pom;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
-
-import static org.junit.Assert.*;
 
 public class IniciarSesionPageTest {
     private WebDriver driver;
@@ -15,7 +13,9 @@ public class IniciarSesionPageTest {
     public void setUp() throws Exception {
         iniciarSesionPage = new IniciarSesionPage(driver);
         driver = iniciarSesionPage.chromedriverconnection();
-        driver.get("https://www.lineru.com/");
+        driver.get("https://www.lineru.com/iniciar-sesion");
+        driver.manage().window().maximize();
+        Thread.sleep(2000);
 
     }
 
@@ -27,6 +27,7 @@ public class IniciarSesionPageTest {
     @Test
     public void test() throws Exception{
         iniciarSesionPage.iniciar_sesion();
+        System.out.println("Paso");
     }
 
 }

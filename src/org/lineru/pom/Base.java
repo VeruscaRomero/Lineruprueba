@@ -18,7 +18,6 @@ public class Base {
     public WebDriver chromedriverconnection(){
         String ChromePath = System.getProperty("user.dir") + "\\drivers\\chromedriver.exe";
         System.setProperty("webdriver.chrome.driver", ChromePath);
-        driver.manage().window().maximize();
         driver = new ChromeDriver();
         return driver;
     }
@@ -46,9 +45,17 @@ public class Base {
     public void clear(By locator){
         driver.findElement(locator).clear();
     }
+
     public JavascriptExecutor executor (By locator){
          return (JavascriptExecutor) driver;
     }
+
+    public JavascriptExecutor ClickByJS (By locator){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", locator);
+        return (JavascriptExecutor) driver;
+    }
+
     public void executorScroll (){
         JavascriptExecutor executer = (JavascriptExecutor) driver;
         executer.executeScript("window.scrollBy(0,200)");

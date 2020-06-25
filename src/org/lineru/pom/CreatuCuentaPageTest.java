@@ -2,10 +2,8 @@ package org.lineru.pom;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.Test;
-
-import static org.junit.Assert.*;
 
 public class CreatuCuentaPageTest {
     private WebDriver driver;
@@ -15,7 +13,9 @@ public class CreatuCuentaPageTest {
     public void setUp() throws Exception {
         creatuCuentaPage = new CreatuCuentaPage(driver);
         driver = creatuCuentaPage.chromedriverconnection();
-        driver.get("https://www.lineru.com/");
+        driver.get("https://www.lineru.com/registro");
+        driver.manage().window().maximize();
+        Thread.sleep(2000);
     }
 
     @After

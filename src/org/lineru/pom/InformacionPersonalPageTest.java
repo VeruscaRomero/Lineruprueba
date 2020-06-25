@@ -5,8 +5,6 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import static org.junit.Assert.*;
-
 public class InformacionPersonalPageTest {
     private WebDriver driver;
     InformacionPersonalPage informacionPersonalPage;
@@ -16,6 +14,8 @@ public class InformacionPersonalPageTest {
         informacionPersonalPage = new InformacionPersonalPage(driver);
         driver = informacionPersonalPage.chromedriverconnection();
         driver.get("https://www.lineru.com/");
+        driver.manage().window().maximize();
+        Thread.sleep(2000);
 
     }
 

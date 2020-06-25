@@ -5,8 +5,6 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
-import static org.junit.Assert.*;
-
 public class InformacionLaboralPageTest {
     private WebDriver driver;
     InformacionLaboralPage informacionLaboralPage;
@@ -16,6 +14,8 @@ public class InformacionLaboralPageTest {
         informacionLaboralPage = new InformacionLaboralPage(driver);
         driver = informacionLaboralPage.chromedriverconnection();
         driver.get("https://www.lineru.com/");
+        driver.manage().window().maximize();
+        Thread.sleep(2000);
     }
 
     @After
